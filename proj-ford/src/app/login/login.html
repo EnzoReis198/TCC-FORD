@@ -1,0 +1,43 @@
+<div class="login-wrapper">
+  <div class="login-box" [class.show]="showLoginBox">
+<button class="btn-back" (click)="goBack()" aria-label="Voltar">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    stroke="white"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    viewBox="0 0 24 24"
+  >
+    <polyline points="15 18 9 12 15 6" />
+  </svg>
+</button>
+
+    <img src="assets/img/logo-ford.png" alt="Ford Logo" class="logo" />
+
+    <h2 class="title">Bem Vindo(a)</h2>
+
+    <input
+      #usernameInput
+      type="text"
+      placeholder="Usuário"
+      (input)="username = usernameInput.value"
+      class="input-field"
+    />
+
+    <input
+      #passwordInput
+      type="password"
+      placeholder="Senha"
+      (input)="password = passwordInput.value"
+      class="input-field"
+    />
+
+    <button (click)="onSubmit()" class="btn-login">Login</button>
+
+    <small class="help-text">Digite seu usuário e senha para continuar</small>
+  </div>
+</div>

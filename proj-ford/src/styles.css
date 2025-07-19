@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+  * {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+  }
+
+  
+html, body {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: linear-gradient(135deg, #000000 0%, #050814 70%);
+  overflow-x: hidden;
+  overflow-y: auto; /* troca scroll para auto */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow: -moz-scrollbars-none; /* legacy Firefox */
+}
