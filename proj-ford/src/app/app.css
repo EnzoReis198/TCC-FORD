@@ -917,24 +917,19 @@ footer {
 }
 
 
-.menu-column h3,
-.menu-column a {
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
+
 
 /* Delay para cada tipo de texto — você pode ajustar */
 .side-cover.active .menu-column h3 {
   opacity: 1;
   transform: translateX(0);
-  transition-delay: 0.4s;
+  transition-delay: 0.2s;
 }
 
 .side-cover.active .menu-column a {
   opacity: 1;
   transform: translateX(0);
-  transition-delay: 0.6s;
+  transition-delay: 0.2s;
 }
 
 /* Um glow suave nas letras do título */
@@ -1227,52 +1222,6 @@ width: 35rem;
   border-color: var(--primary-color);
 }
 
-.menu {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 80px 60px;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-}
-
-.menu-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.menu-column h3 {
-  font-size: 20px;
-  color: #00aaff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #00557755;
-  padding-bottom: 5px;
-}
-
-.menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-list li {
-  font-size: 16px;
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.menu-list li:hover {
-  color: #00ccff;
-  transform: translateX(5px);
-}
 
 .menu-car {
   display: flex;
@@ -1351,62 +1300,313 @@ width: 35rem;
 
 
 
-
-
-
 .loader-wrapper {
   position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #061227, #0b1f3a);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #001129, #0a1f44, #001c35);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 9999;
+  color: #ccc;
 }
 
 .logo-container {
-  position: relative;
+  text-align: center;
+}
+
+.logo-container img {
   width: 200px;
-  height: 100px;
+  height: auto;
+  animation: wipe 3s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 200% 100%;
+  -webkit-mask-position: 0% 0%;
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+  mask-repeat: no-repeat;
+  mask-size: 200% 100%;
+  mask-position: 0% 0%;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+}
+
+.loading-text {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #aaa;
+  font-style: italic;
+}
+
+.progress-bar {
+  width: 120px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 12px auto 0;
+  border-radius: 2px;
   overflow: hidden;
-  filter: brightness(0.3); /* deixa tudo escuro inicialmente */
 }
 
-.ford-logo {
-  width: 100%;
+.progress-fill {
+  width: 0%;
   height: 100%;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 0 8px #00aaff);
-  position: relative;
-  z-index: 1;
+  background: #ffffff;
+  animation: progress 3s linear infinite;
 }
 
-/* brilho animado em um elemento sobreposto */
-.shine {
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-25deg);
-  animation: shine 2.5s infinite;
-  pointer-events: none;
-  mix-blend-mode: screen; /* modo que ilumina a imagem abaixo */
-  z-index: 2;
-}
-
-@keyframes shine {
+@keyframes wipe {
   0% {
-    left: -150%;
+    -webkit-mask-position: 0% 0%;
+            mask-position: 0% 0%;
   }
   100% {
-    left: 150%;
+    -webkit-mask-position: 100% 0%;
+            mask-position: 100% 0%;
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,28,64,0.95), rgba(0,17,34,0.95));
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.menu-columns {
+  display: flex;
+  flex: 2;
+  gap: 2rem;
+}
+
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-column h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.menu-column a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.menu-column a:hover {
+  color: #00aaff;
+}
+
+.menu-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.menu-images img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.profile-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet e menores */
+@media (max-width: 1024px) {
+  body {
+    cursor: auto !important;
+  }
+
+  .carousel {
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 15px;
+  }
+
+  .carousel-item {
+    width: 80px;
+  }
+
+  .conteudo-extra {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    cursor: auto !important;
+  }
+
+  nav {
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-section {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    height: 100%;
+    background: #000;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding: 20px;
+  }
+
+  .menu-section.active {
+    left: 0;
+  }
+
+  .menu-column {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .image-section {
+    width: 100%;
+    height: 200px;
+  }
+
+  .car-description {
+    position: relative;
+    max-width: 90%;
+    margin: 30px auto 0 auto;
+    left: auto;
+    top: auto;
+    transform: none;
+    text-align: center;
+  }
+
+  .car-description .car-title {
+    font-size: 2rem;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .car-description .car-tagline {
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .carousel-item {
+    width: 60%;
+    max-width: 200px;
+  }
+}
+
+/* Pequenos celulares */
+@media (max-width: 480px) {
+  body {
+    cursor: auto !important;
+  }
+
+  .conteudo-extra {
+    padding: 15px;
+  }
+
+  .conteudo-btn {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    letter-spacing: 5px;
   }
 }

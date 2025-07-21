@@ -1,9 +1,14 @@
-<div class="loader-wrapper" *ngIf="showLoader">
+
+<div class="loader-wrapper" *ngIf="showLoader" aria-live="polite" role="status">
   <div class="logo-container">
-    <img src="assets/img/logo-ford.png" alt="Ford Logo" class="ford-logo" />
-    <div class="shine"></div>
+    <img src="assets/img/logo-ford.png" alt="Logotipo da Ford">
+    <p class="loading-text">Carregando sua experiência Ford…</p>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
   </div>
 </div>
+
 
 
 
@@ -26,12 +31,7 @@
     <div class="nav-icons" role="navigation">
     <div class="nav-icons" role="navigation">
 
-      <!--AQUI É O ICON DE PESQUISA-->
-      <svg tabindex="0" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-      
-      <!--AQUI É O ICON DE LANGUAGE-->
-      <svg tabindex="0" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15 15 0 0 1 0 20" /></svg>
-      
+  
      <!-- ÍCONE DE USUÁRIO -->
 <svg tabindex="0" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
      (click)="toggleUserMenu()" class="user-icon">
@@ -45,15 +45,21 @@
 
 
 
-  <!-- MINI MENU LATERAL DE LOGIN -->
-<div class="user-menu" [class.open]="isMenuOpen">
+<!-- MINI MENU LATERAL DE LOGIN -->
+<div class="user-menu" [class.open]="isMenuOpen" role="menu" aria-label="Menu do usuário">
   <ng-container *ngIf="!isLoggedIn; else loggedInBlock">
     <p>Faça seu login</p>
-<button (click)="irParaLogin()">Entrar</button>
+    <button (click)="irParaLogin()">Entrar</button>
   </ng-container>
 
   <ng-template #loggedInBlock>
     <p>Olá, {{ userName }}!</p>
+    <img [src]="profile?.photoUrl || 'assets/img/default-profile.png'" alt="Perfil" />
+    <div class="user-info">
+      <p class="user-name">{{ profile?.name || 'Usuário' }}</p>
+      <p class="user-email">{{ profile?.email || 'Email não disponível' }}</p>
+    </div>
+   
     <button (click)="logout()">Sair</button>
   </ng-template>
 </div>
@@ -122,35 +128,49 @@
     <div id="tab1" class="tab-content">
       <!-- conteúdo do menu -->
        
-<div class="menu">
-  <div class="menu-column">
-    <h3>Veículos</h3>
-    <ul class="menu-list">
-      <li class="menu-car" data-video="mustang.mp4">
-        <img src="assets/mustang-thumb.png" alt="Mustang">
-        <span>Mustang GT</span>
-      </li>
-      <li class="menu-car" data-video="f150.mp4">
-        <img src="assets/f150-thumb.png" alt="F-150">
-        <span>F-150 Lightning</span>
-      </li>
-    </ul>
-  </div>
+<div class="menu-overlay">
+  <div class="menu-container">
+    <div class="menu-columns">
+      <div class="menu-column">
+        <h3>Performance</h3>
+        <a href="#">Mustang</a>
+        <a href="#">Raptor</a>
+        <a href="#">Novo Modelo</a>
+      </div>
+      <div class="menu-column">
+        <h3>Veiculos</h3>
+        <a href="#">Cars</a>
+        <a href="#">SUVs</a>
+        <a href="#">Crossovers</a>
+        <a href="#">Vans</a>
 
-  <div class="menu-column">
-    <h3>Conectividade</h3>
-    <ul class="menu-list">
-      <li><i class="icon">📡</i>FordPass</li>
-      <li><i class="icon">🔊</i>Assistente de Voz</li>
-    </ul>
-  </div>
+        <h3>Trucks</h3>
+        <a href="#">Em breve</a>
+        <a href="#">Em breve</a>
 
-  <div class="menu-column">
-    <h3>Serviços</h3>
-    <ul class="menu-list">
-      <li><i class="icon">🛠</i>Atualizações OTA</li>
-      <li><i class="icon">📍</i>Rastreamento</li>
-    </ul>
+        <h3>Ofertas</h3>
+        <a href="#">Em breve</a>
+        <a href="#">Em breve</a>
+      </div>
+      <div class="menu-column">
+        <h3>Automotivo</h3>
+        <a href="#">Em breve</a>
+        <a href="#">Em breve</a>
+        <a href="#">Em breve</a>
+        <a href="#">Em breve</a>
+
+        <h3>Serviços</h3>
+        <a href="#">Em breve</a>
+        <a href="#">Em breve</a>
+
+        <h3>Concessionárias</h3>
+        <a href="#">Em breve</a>
+        <a href="#">Em breve</a>
+      </div>
+    </div>
+    <div class="menu-images">
+      <img src="assets/img/carro1.png" alt="Mustang">
+    </div>
   </div>
 </div>
 
@@ -164,60 +184,55 @@
   <!-- Conteúdo extra abaixo do vídeo -->
 
 
+
 <section class="clean-performance">
   <div class="clean-text">
-    <span class="label">UPDATE</span>
-    <h2 class="title">Because the biggest challenge<br>is to remain <strong>unbeatable.</strong></h2>
-    <p class="subtitle">Discover the new Ford GT Performance in detail.</p>
-
+    <span class="label">NOVIDADE</span>
+    <h2 class="title">Porque o maior desafio<br>é se manter <strong>imbatível.</strong></h2>
+    <p class="subtitle">Descubra todos os detalhes do novo Ford Performance.</p>
 
 <section class="mini-carousel">
   <div class="carousel-track">
     <div class="carousel-slide active">
-      <h3>Velocidade e Controle</h3>
-      <p>O Mustang GT oferece equilíbrio perfeito entre potência e precisão.</p>
+      <h3>Força e Precisão</h3>
+      <p>Domine qualquer estrada com potência impressionante e controle absoluto.</p>
     </div>
     <div class="carousel-slide">
-      <h3>Design Aerodinâmico</h3>
-      <p>Linhas fluidas com foco em performance e elegância pura.</p>
+      <h3>Design Inovador</h3>
+      <p>Linhas marcantes que unem aerodinâmica, elegância e atitude.</p>
     </div>
     <div class="carousel-slide">
-      <h3>Tecnologia Imersiva</h3>
-      <p>Conectividade Ford SYNC e experiência digital envolvente.</p>
+      <h3>Tecnologia Avançada</h3>
+      <p>Conectividade total com SYNC e experiências digitais sem limites.</p>
     </div>
   </div>
 
-<div class="carousel-dots">
-  <span class="dash active" onclick="goToSlide(0)"></span>
-  <span class="dash" onclick="goToSlide(1)"></span>
-  <span class="dash" onclick="goToSlide(2)"></span>
+  <div class="carousel-dots">
+    <span class="dash active" onclick="goToSlide(0)"></span>
+    <span class="dash" onclick="goToSlide(1)"></span>
+    <span class="dash" onclick="goToSlide(2)"></span>
+  </div>
+</section>
+
+<div class="features-row">
+  <div class="feature-item">
+    <img src="assets/img/carro1.png" alt="Aerodinâmica" />
+    <h3>Aerodinâmica</h3>
+    <p>Desempenho de pista com estabilidade máxima em altas velocidades.</p>
+  </div>
+  <div class="feature-item">
+    <img src="assets/img/carro2.png" alt="Conforto" />
+    <h3>Conforto</h3>
+    <p>Ergonomia pensada para longas viagens com o espírito das corridas.</p>
+  </div>
+</div>
+</div>
+
+<div class="clean-image-wrapper">
+  <img src="assets/img/carronovo.png" alt="Motorista e Ford" class="highlight-img" />
 </div>
 </section>
 
-
-
-    <div class="features-row">
-      <div class="feature-item">
-        <img src="assets/img/carro1.png" alt="Downforce" />
-        <h3>Downforce</h3>
-        <p>Precision aero performance for maximum track grip and stability.</p>
-      </div>
-      <div class="feature-item">
-        <img src="assets/img/carro2.png" alt="Comfort" />
-        <h3>Comfortable</h3>
-        <p>Track-ready comfort with racing ergonomics for long drives.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="clean-image-wrapper">
-    <img src="assets/img/carro4.png" alt="Driver and Ford GT" class="highlight-img" />
-    <div class="quote-glass">
-      <p>"Uma máquina de precisão que redefine cada curva."</p>
-      <span>— Equipe de Engenharia da Ford</span>
-    </div>
-  </div>
-</section>
 
 
 

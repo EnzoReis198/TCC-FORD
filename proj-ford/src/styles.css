@@ -14,7 +14,6 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
-  background: linear-gradient(135deg, #000000 0%, #050814 70%);
   overflow-x: hidden;
   overflow-y: auto; /* troca scroll para auto */
   scrollbar-width: none; /* Firefox */

@@ -1,0 +1,256 @@
+*{
+    background-color: white;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* Cor de fundo geral */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fundo com quadrados 3D mais sutis */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f2f5;
+  background-image: 
+    linear-gradient(0deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px), /* Linhas horizontais mais sutis */
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px); /* Linhas verticais mais sutis */
+  background-size: 100px 100px; /* Define o tamanho de cada quadrado */
+  z-index: -1; /* Fica atrás do conteúdo */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra interna mais suave */
+}
+
+.container {
+  position: relative;
+  z-index: 1; /* Fica acima do fundo */
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.5rem;
+}
+
+
+
+
+/* Navbar Transparente */
+.navbar {
+    position: absolute; /* Posição absoluta para flutuar sobre o conteúdo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    background-color: transparent; /* Fundo transparente */
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Alinha com a largura do main-screen-container */
+    margin: 0 auto; /* Centraliza o conteúdo da navbar */
+}
+
+.back-button {
+    color: #666; /* Cor mais escura para o texto no fundo claro */
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.back-button i {
+    margin-right: 8px;
+    color: #007bff; /* Azul para o ícone de seta */
+}
+
+.car-title {
+    text-align: center;
+    flex-grow: 1;
+    color: #1898ff; /* Cor azul para o título */
+}
+
+.car-title h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #192b91; /* Cor azul do título */
+    letter-spacing: 1px;
+}
+
+.car-title p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #8a94ad; /* Azul claro para o subtítulo */
+}
+
+/* Botão de Voltar */
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 20px;
+}
+
+/* Container Principal */
+.main-screen-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    background-color: #f0f2f5;
+}
+
+/* Render Area */
+.render-area {
+    width: 100%;
+    max-width: 1000px;
+    height: 60vh;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%); /* Centraliza a sidebar verticalmente */
+    width: 300px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.sidebar h2{
+    font-size: 14px;
+    color: rgb(46, 94, 156);
+}
+
+/* Footer Fixo */
+.footer {
+    position: fixed; /* Fixado no final da tela */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+}
+
+/* Estilo dos Itens no Footer */
+.stats-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.stats-item:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e6f2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.icon-circle i {
+    font-size: 20px;
+    color: #007bff;
+}
+
+.stats-item p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+}
+
+.stats-item span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 4px;
+}
+
+/* Logo do footer */
+.logo-loveable {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #aaa;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+.logo-loveable img {
+    height: 15px;
+    width: auto;
+    margin-left: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .car-title h1 {
+        font-size: 20px;
+    }
+    .car-title p {
+        font-size: 12px;
+    }
+    .main-screen-container {
+        padding-top: 60px;
+        padding-bottom: 70px;
+    }
+    .render-area {
+        height: 45vh;
+        border-radius: 4px;
+    }
+    .sidebar {
+        width: 180px;
+        top: 10px;
+        left: 10px;
+        padding: 10px;
+    }
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+    .stats-item {
+        flex-basis: 50%;
+        margin-bottom: 10px;
+    }
+}
