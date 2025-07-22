@@ -3,7 +3,7 @@ module.exports = {
     {
       "id": 1,
       "modelo": "Mustang",
-      "imagemUrl": "assets/img/mustang.png",
+      "imagemUrl": "/assets/img/mustang.png",
       "totalVendas": 1500,
       "veiculosConectados": 500,
       "veiculosAtualizados": 750
@@ -11,7 +11,7 @@ module.exports = {
     {
       "id": 2,
       "modelo": "Ranger",
-      "imagemUrl": "assets/img/ranger.png",
+      "imagemUrl": "/assets/img/ranger.png",
       "totalVendas": 1200,
       "veiculosConectados": 450,
       "veiculosAtualizados": 700
@@ -19,7 +19,7 @@ module.exports = {
     {
       "id": 3,
       "modelo": "Territory",
-      "imagemUrl": "assets/img/territory.png",
+      "imagemUrl": "/assets/img/territory.png",
       "totalVendas": 800,
       "veiculosConectados": 300,
       "veiculosAtualizados": 400
@@ -27,7 +27,7 @@ module.exports = {
     {
       "id": 4,
       "modelo": "Bronco Sport",
-      "imagemUrl": "assets/img/broncoSport.png",
+      "imagemUrl": "/assets/img/broncoSport.png",
       "totalVendas": 1000,
       "veiculosConectados": 350,
       "veiculosAtualizados": 500
@@ -35,7 +35,7 @@ module.exports = {
   ],
 
 
-  "vehicleData": [
+  vehicleData: [
   {
     "codigo": "2FRHDUYS2Y63NHD22454",
     "modelo": "Mustang",
