@@ -88,6 +88,10 @@
     flex: 1; /* Para os cards ocuparem todo o espaço disponível */
   }
 
+  .card, .car-image {
+  width: 100%;
+}
+
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(24, 152, 255, 0.3);
@@ -199,7 +203,7 @@
   }
   .car-image img {
     max-width: 95%;
-    max-height: 400px;
+      max-height: 300px;
     object-fit: contain;
     border-radius: 12px;
     animation: float 4s ease-in-out infinite;
@@ -316,4 +320,65 @@
   }
 }
 
+
+
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-areas:
+      "center"
+      "left"
+      "right"
+      "bottom";
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .bottom {
+    grid-template-columns: repeat(2, 1fr); /* reduz de 4 para 2 colunas */
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .grid {
+    padding: 16px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr; /* uma coluna só no celular */
+    gap: 16px;
+  }
+
+  .car-animation-container {
+    height: 300px;
+  }
+
+  .car-header {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #modelo-nome {
+    font-size: 1.1rem;
+  }
+
+  .speed-box {
+    font-size: 1.5rem;
+  }
+
+    .car-image img {
+    max-height: 200px;
+  }
+}
 

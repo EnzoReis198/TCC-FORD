@@ -1,59 +1,72 @@
+<div class="background"></div> <!-- Fundo com quadrados -->
 
-    <div class="background"></div> <!-- Fundo com quadrados -->
+<!-- Conteúdo principal -->
 <div class="container">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="back-button" (click)="irParaHome()">
+        <i class="fas fa-chevron-left"></i> Voltar
+      </div>
+      <div class="car-title">
+        <h1>FORD MUSTANG GT</h1>
+        <p>Experiência 3D Interativa</p>
+      </div>
+      <div class="empty-space">
+      </div>
+    </div>
+  </nav>
 
+  <!-- Conteúdo central (Sidebar + Render Area) -->
+  <div class="main-screen-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Interações 3D</h2>
+      <ul>
+        <li>Clique nas peças para ver detalhes</li>
+        <li>Arraste para rotacionar a visão</li>
+        <li>Scroll para aproximar/afastar</li>
+        <li>Peças selecionadas giram continuamente</li>
+        <li>Hover nas peças para destacar</li>
+      </ul>
+    </aside>
+
+
+
+    <div class="render-area">
+<img src="assets/img/carro1.png" alt="">
+    </div>
+  </div>
 </div>
 
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="back-button">
-                <i class="fas fa-chevron-left"></i> Voltar
-            </div>
-            <div class="car-title">
-                <h1>FORD MUSTANG GT</h1>
-                <p>Experiência 3D Interativa</p>
-            </div>
-            <div class="empty-space"></div>
-        </div>
-    </nav>
-
-
-            <aside class="sidebar">
-                <h2>Interações 3D</h2>
-                <ul>
-                    <li>Clique nas peças para ver detalhes</li>
-                    <li>Arraste para rotacionar a visão</li>
-                    <li>Scroll para aproximar/afastar</li>
-                    <li>Peças selecionadas giram continuamente</li>
-                    <li>Hover nas peças para destacar</li>
-                </ul>
-            </aside>
-
-    <footer class="footer">
-        <div class="stats-item">
-            <div class="icon-circle">
-                <i class="fas fa-bolt"></i>
-            </div>
-            <p>Potência</p>
-            <span>460 HP</span>
-        </div>
-        <div class="stats-item">
-            <div class="icon-circle">
-                <i class="fas fa-grip-lines"></i> </div>
-            <p>Torque</p>
-            <span>570 Nm</span>
-        </div>
-        <div class="stats-item">
-            <div class="icon-circle">
-                <i class="fas fa-tachometer-alt"></i>
-            </div>
-            <p>0-100 km/h</p>
-            <span>4.3s</span>
-        </div>
-        <div class="stats-item">
-            <div class="icon-circle">
-                <i class="fas fa-road"></i> </div>
-            <p>Vel. Máx.</p>
-            <span>250 km/h</span>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="footer">
+  <div class="stats-item">
+    <div class="icon-circle">
+      <i class="fas fa-bolt"></i>
+    </div>
+    <p>Potência</p>
+    <span>460 HP</span>
+  </div>
+  <div class="stats-item">
+    <div class="icon-circle">
+      <i class="fas fa-grip-lines"></i>
+    </div>
+    <p>Torque</p>
+    <span>570 Nm</span>
+  </div>
+  <div class="stats-item">
+    <div class="icon-circle">
+      <i class="fas fa-tachometer-alt"></i>
+    </div>
+    <p>0-100 km/h</p>
+    <span>4.3s</span>
+  </div>
+  <div class="stats-item">
+    <div class="icon-circle">
+      <i class="fas fa-road"></i>
+    </div>
+    <p>Vel. Máx.</p>
+    <span>250 km/h</span>
+  </div>
+</footer>
