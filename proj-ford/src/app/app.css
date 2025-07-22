@@ -1467,11 +1467,6 @@ width: 35rem;
   }
 
 
-    #background-video {
-    min-width: 100vw;
-    min-height: 100vh;
-  }
-
   .carousel {
     justify-content: center;
     padding: 20px 0;
@@ -1515,10 +1510,6 @@ width: 35rem;
   }
 
 
-    #background-video {
-    min-width: 100vw;
-    min-height: 100vh;
-  }
 
   nav {
     padding: 0 20px;
@@ -1651,10 +1642,6 @@ width: 35rem;
     opacity: 0;
   }
 
-    #background-video {
-    min-width: 100vw;
-    min-height: 100vh;
-  }
 
   .nav-icons{
     margin-left: 20px;
