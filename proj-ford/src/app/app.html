@@ -154,7 +154,9 @@
         <a href="#">Em breve</a>
         <a href="#">Em breve</a>
       </div>
-      <div class="menu-column">
+
+
+      <div class="menu-column" id="automotivo">
         <h3>Automotivo</h3>
         <a href="#">Em breve</a>
         <a href="#">Em breve</a>
@@ -169,6 +171,7 @@
         <a href="#">Em breve</a>
         <a href="#">Em breve</a>
       </div>
+
     </div>
     <div class="menu-images">
       <img src="assets/img/carro1.png" alt="Mustang">
@@ -239,32 +242,44 @@
     <section class="section__container range__container" id="about">
       <h2 class="section__header">COLEÇÃO <span>DE VEÍCULOS</span> FORD</h2>
       <div class="range__grid">
-        <div class="range__card">
+
+
+        <div class="range__card" (click)="irParaCars()">
           <img src="assets/img/ranger-1.png" alt="range" />
           <div class="range__details">
             <h4>CARS</h4>
-            <a href="#"><i class="ri-arrow-right-line"></i></a>
+            <a><i class="ri-arrow-right-line"></i></a>
           </div>
+
+
+
         </div>
-        <div class="range__card">
+        <div class="range__card" (click)="irParaSuvs()">
           <img src="assets/img/SUVS.png" alt="range" />
           <div class="range__details">
             <h4>SUVS</h4>
-            <a href="#"><i class="ri-arrow-right-line"></i></a>
+           <a routerLink="/cars"><i class="ri-arrow-right-line"></i></a>
           </div>
         </div>
-        <div class="range__card">
+
+
+
+        <div class="range__card" (click)="irParaVans()">
           <img src="assets/img/VANS.png" alt="range" />
           <div class="range__details">
             <h4>VANS</h4>
-            <a href="#"><i class="ri-arrow-right-line"></i></a>
+           <a routerLink="/cars"><i class="ri-arrow-right-line"></i></a>
           </div>
         </div>
-        <div class="range__card">
+
+
+
+
+        <div class="range__card" (click)="irParaEletric()">
           <img src="assets/img/ELETRIC.png" alt="range" />
           <div class="range__details">
             <h4>ELECTRIC</h4>
-            <a href="#"><i class="ri-arrow-right-line"></i></a>
+           <a routerLink="/cars"><i class="ri-arrow-right-line"></i></a>
           </div>
         </div>
       </div>

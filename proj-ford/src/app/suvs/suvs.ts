@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './suvs.html',
   styleUrl: './suvs.css'
 })
-export class Suvs {
+export class SuvsComponent {
 
 }

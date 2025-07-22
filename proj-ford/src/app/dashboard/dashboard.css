@@ -323,7 +323,7 @@
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .grid {
     grid-template-areas:
       "center"
@@ -339,7 +339,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 770px) {
   header {
     flex-direction: column;
     gap: 12px;

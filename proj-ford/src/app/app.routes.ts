@@ -26,6 +26,36 @@ export const routes: Routes = [
         canActivate: [AuthGuard] // 🔒 Protege também se quiser
       },
       {
+        path: 'cars',
+        loadComponent: () => import('./cars/cars').then(m => m.CarsComponent),
+        canActivate: [AuthGuard] // 🔒 Protege também se quiser
+      },
+        {
+        path: 'suvs',
+        loadComponent: () => import('./suvs/suvs').then(m => m.SuvsComponent),
+        canActivate: [AuthGuard] // 🔒 Protege também se quiser
+      },
+        {
+        path: 'vans',
+        loadComponent: () => import('./vans/vans').then(m => m.VansComponent),
+        canActivate: [AuthGuard] // 🔒 Protege também se quiser
+      },
+        {
+        path: 'eletric',
+        loadComponent: () => import('./eletric/eletric').then(m => m.EletricComponent),
+        canActivate: [AuthGuard] // 🔒 Protege também se quiser
+      },
+
+
+
+
+
+
+
+
+
+
+      {
       path: '**',
       loadComponent: () => import('./not-found/not-found').then(m => m.NotFoundComponent)
       }

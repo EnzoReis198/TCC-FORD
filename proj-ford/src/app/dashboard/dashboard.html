@@ -1,85 +1,81 @@
-  <div class="grid">
-    <div class="left">
-      <div class="card">
-        <div class="card-header">COMBUSTÍVEL <i class="fas fa-battery-full"></i></div>
-        <div class="value" id="batteryValue">78.0%</div>
-        <div class="bar"><div class="bar-fill" style="width: 78%;"></div></div>
-        <div class="small">Desconectado</div>
-      </div>
-      <div class="card">
-        <div class="card-header">VENDAS <i class="fas fa-tachometer-alt"></i></div>
-        <div class="value" id="autonomyValue">502 km</div>
-        <div class="small">Estimativa atual</div>
-        <div class="small">MODO ECO ATIVO</div>
-      </div>
-      <div class="card">
-        <div class="card-header">Climatização <i class="fas fa-thermometer-half"></i></div>
-        <div class="temp-control">
-          <button onclick="changeTemp(-1)">−</button>
-          <div class="value" id="tempDisplay">22°C</div>
-          <button onclick="changeTemp(1)">+</button>
-        </div>
-        <div class="small">Ar condicionado automático</div>
-      </div>
+<div class="grid">
+  <div class="left">
+    <div class="card">
+      <div class="card-header">COMBUSTÍVEL <i class="fas fa-gas-pump"></i></div>
+      <div class="value" id="batteryValue">78.0%</div>
+      <div class="bar"><div class="bar-fill" style="width: 78%;"></div></div>
+      <div class="small">Desconectado</div>
     </div>
-
-<div class="car-image">
-  <div class="car-header">
-    <button class="arrow-button" (click)="trocarModelo(-1)">&#8592;</button>
-
-    <div class="modelo-info">
-      <div id="modelo-nome">FORD F-150 LIGHTNING</div>
-      <div id="modelo-desc">Pro Model • 2024</div>
+    <div class="card">
+      <div class="card-header">VENDAS <i class="fas fa-chart-line"></i></div>
+      <div class="value" id="autonomyValue">502 km</div>
+      <div class="small">Estimativa atual</div>
+      <div class="small">MODO ECO ATIVO</div>
     </div>
-
-    <button class="arrow-button" (click)="trocarModelo(1)">&#8594;</button>
-  </div>
-
-  <div class="car-animation-container">
-    <img id="carImage" src="/assets/img/carro1.png" alt="Car Image" class="car-img">
-  </div>
-  <div class="speed-box">8 mph<br><span class="small">Velocidade atual</span></div>
-</div>
-
-
-    <div class="right">
-      <div class="card">
-        <div class="card-header">Status do Sistema <i class="fas fa-cogs"></i></div>
-        <ul class="status-list">
-          <li>Veículos Conectados <span>567</span></li>
-          <li>Veículos Atualizados <span>36055</span></li>
-          <li>Bluetooth <span>Conectado</span></li>
-          <li>Status <span>Ativo</span></li>
-          <li>Segurança <span>Protegido</span></li>
-        </ul>
+    <div class="card">
+      <div class="card-header">Climatização <i class="fas fa-temperature-half"></i></div>
+      <div class="temp-control">
+        <button onclick="changeTemp(-1)">−</button>
+        <div class="value" id="tempDisplay">22°C</div>
+        <button onclick="changeTemp(1)">+</button>
       </div>
-      <div class="card">
-        <div class="card-header">Saúde do Veículo <i class="fas fa-heartbeat"></i></div>
-        <div class="circle">98%</div>
-        <div class="small" style="text-align: center;">Próxima manutenção em<br><span style="color: #1898ff; font-weight: 600;">4,200 km</span></div>
-      </div>
+      <div class="small">Ar condicionado automático</div>
     </div>
+  </div>
 
+  <div class="car-image">
+    <div class="car-header">
+      <button class="arrow-button" (click)="trocarModelo(-1)">&#8592;</button>
+      <div class="modelo-info">
+        <div id="modelo-nome">FORD F-150 LIGHTNING</div>
+        <div id="modelo-desc">Pro Model • 2024</div>
+      </div>
+      <button class="arrow-button" (click)="trocarModelo(1)">&#8594;</button>
+    </div>
+    <div class="car-animation-container">
+      <img id="carImage" src="/assets/img/carro1.png" alt="Car Image" class="car-img">
+    </div>
+    <div class="speed-box">8 mph<br><span class="small">Velocidade atual</span></div>
+  </div>
 
-    <div class="bottom">
-  <div class="card">
-    <div class="card-header">CÓDIGO <i class="fas fa-bolt"></i></div>
-    <div class="value" id="efficiencyValue">4.2 mi/kWh</div>
-    <div class="small" style="color: #00ff99; font-weight: bold;">+5.2%</div>
+  <div class="right">
+    <div class="card">
+      <div class="card-header">Status do Sistema <i class="fas fa-cogs"></i></div>
+      <ul class="status-list">
+        <li>Veículos Conectados <span>567</span></li>
+        <li>Veículos Atualizados <span>36055</span></li>
+        <li>Bluetooth <span>Conectado</span></li>
+        <li>Status <span>Ativo</span></li>
+        <li>Segurança <span>Protegido</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-header">Saúde do Veículo <i class="fas fa-heartbeat"></i></div>
+      <div class="circle">98%</div>
+      <div class="small" style="text-align: center;">Próxima manutenção em<br><span style="color: #1898ff; font-weight: 600;">4,200 km</span></div>
+    </div>
   </div>
-  <div class="card">
-    <div class="card-header">ODOMETRO <i class="fas fa-clock"></i></div>
-    <div class="value" id="travelTimeValue">2h 34m</div>
-    <div class="small">Estimado</div>
-  </div>
-  <div class="card">
-    <div class="card-header">LATITUDE <i class="fas fa-tachometer-alt"></i></div>
-    <div class="value" id="performanceValue">85%</div>
-    <div class="small">Otimizada</div>
-  </div>
-  <div class="card">
-    <div class="card-header">LONGITUDE <i class="fas fa-dollar-sign"></i></div>
-    <div class="value" id="economyValue">R$ 2.847</div>
-    <div class="small">Este mês</div>
+
+  <div class="bottom">
+    <div class="card">
+      <div class="card-header">CÓDIGO <i class="fas fa-hashtag"></i></div>
+      <div class="value" id="efficiencyValue">4.2 mi/kWh</div>
+      <div class="small" style="color: #00ff99; font-weight: bold;">+5.2%</div>
+    </div>
+    <div class="card">
+      <div class="card-header">ODÔMETRO <i class="fas fa-road"></i></div>
+      <div class="value" id="travelTimeValue">2h 34m</div>
+      <div class="small">Estimado</div>
+    </div>
+    <div class="card">
+      <div class="card-header">LATITUDE <i class="fas fa-globe-americas"></i></div>
+      <div class="value" id="performanceValue">85%</div>
+      <div class="small">Otimizada</div>
+    </div>
+    <div class="card">
+      <div class="card-header">LONGITUDE <i class="fas fa-map-marker-alt"></i></div>
+      <div class="value" id="economyValue">R$ 2.847</div>
+      <div class="small">Este mês</div>
+    </div>
   </div>
 </div>

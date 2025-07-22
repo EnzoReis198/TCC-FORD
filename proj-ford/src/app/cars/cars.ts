@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cars',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './cars.html',
   styleUrl: './cars.css'
 })
-export class Cars {
+export class CarsComponent {
+
+
+constructor(private router: Router) {}
+
+irParaDashboard () {
+  this.router.navigate(['/dashboard']);
+}
 
 }
+
+

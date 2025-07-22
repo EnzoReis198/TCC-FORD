@@ -273,4 +273,19 @@ irParaMustang() {
   this.router.navigate(['/mustang']);
 }
 
+irParaCars () {
+  this.router.navigate(['/cars']);
 }
+irParaSuvs () {
+  this.router.navigate(['/suvs']);
+}
+irParaVans () {
+  this.router.navigate(['/vans']);
+}
+irParaEletric () {
+  this.router.navigate(['/eletric']);
+}
+
+}
+
+
