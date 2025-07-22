@@ -1379,15 +1379,6 @@ width: 35rem;
     width: 100%;
   }
 }
-
-
-
-
-
-
-
-
-
 .menu-overlay {
   position: fixed;
   inset: 0;
@@ -1456,34 +1447,6 @@ width: 35rem;
   object-fit: cover;
   margin: 10px 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Tablet e menores */
 @media (max-width: 1024px) {
