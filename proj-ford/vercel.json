@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/dist/proj-ford/$1"
+      "dest": "/dist/proj-ford/index.html"
     }
   ]
 }
