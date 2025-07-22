@@ -1091,6 +1091,7 @@ width: 35rem;
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .feature-item {
@@ -1174,6 +1175,7 @@ width: 35rem;
   position: relative;
   isolation: isolate;
   max-width: 600px;
+  max-height: 700px;
   margin-inline: auto;
   border-radius: 1.5rem;
   overflow: hidden;
@@ -1181,6 +1183,7 @@ width: 35rem;
 }
 
 .range__card img {
+  height: 100%;
   transition: 0.3s;
 }
 
@@ -1205,7 +1208,7 @@ width: 35rem;
   font-size: 3rem;
   font-weight: 600;
   font-family: var(--header-font);
-  color: var(--white);
+  color: white;
 }
 
 .range__details a {

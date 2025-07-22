@@ -269,6 +269,8 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
 
 profile: { photoUrl?: string; name?: string; email?: string } | null = null;
 
-
+irParaMustang() {
+  this.router.navigate(['/mustang']);
+}
 
 }

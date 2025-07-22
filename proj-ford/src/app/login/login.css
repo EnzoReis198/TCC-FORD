@@ -10,6 +10,8 @@
   align-items: center;
   font-family: 'Poppins', sans-serif;
   color: white;
+  min-height: 100vh;
+  padding: 20px; /* garante espaço lateral em telas pequenas */
 }
 
 
@@ -24,6 +26,9 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+    width: 100%;
+  max-width: 400px; /* limita em telas grandes */
+  box-sizing: border-box;
 }
 
 .btn-back {
@@ -117,4 +122,30 @@
 .login-box.show {
   opacity: 0.8;
   transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .input-field,
+  .btn-login {
+    font-size: 1rem;
+  }
+
+  .btn-back {
+    top: 10px;
+    left: 10px;
+    transform: scale(0.9);
+  }
+
+  .logo {
+    width: 90px;
+  }
 }
