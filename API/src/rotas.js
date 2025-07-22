@@ -1,6 +1,6 @@
-const express = require("express");
-const serverless = require("serverless-http"); // Adicione isso
-const rota = express();
+const express = require("express")
+const rota = express()
+const bodyParser = require("body-parser")
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
@@ -10,13 +10,16 @@ const login = require("./controllers/login");
 const validarLogin = require("./intermediarios/validarLogin");
 const { listarVeiculos, listarVeiculoID } = require("./controllers/veicles");
 
-rota.use(express.json());
-rota.use(cors());
+
+
+rota.use(express.json()); 
+
+rota.use(cors())
+// rota.use(bodyParser.json());
 
 rota.post('/login', login);
-rota.get('/vehicles', listarVeiculos);  // Corrigido para "vehicles"
-rota.get('/vehicles/:id', listarVeiculoID);  // Corrigido para "vehicles"
+rota.get('/veicles', listarVeiculos);
+rota.get('/veicles/:id', listarVeiculoID);
 
-// Exporte a função serverless
-module.exports.handler = serverless(rota);  // Isso vai exportar a função Express para ser executada na Vercel
-module.exports.app = rota;  // Exporta o app para uso local ou testes
+
+module.exports = rota
