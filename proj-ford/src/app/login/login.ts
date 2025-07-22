@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       senha: this.password
     };
 
-    this.http.post<any>('http://localhost:3000/login', body).subscribe({
+    this.http.post<any>('https://apienzo-production.up.railway.app/login', body).subscribe({
       next: (res) => {
         console.log('Login realizado:', res);
 

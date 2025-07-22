@@ -32,7 +32,7 @@ export interface ApiResponse {
   providedIn: 'root'
 })
 export class CarsService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://apienzo-production.up.railway.app';
 
   constructor(
     private http: HttpClient,
