@@ -1,8 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "dist/proj-ford/**",
+      "src": "dist/proj-ford/**/*",
       "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/proj-ford/$1"
     }
   ]
 }
