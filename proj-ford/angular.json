@@ -13,20 +13,21 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
+            "outputPath": "dist/proj-ford",  
+            "index": "src/index.html",       
+            "baseHref": "/",               
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-    "src/favicon.ico",
-  "src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
             ]
           },
-
           "configurations": {
             "production": {
               "budgets": [
@@ -75,8 +76,8 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-    "src/favicon.ico",
-  "src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
