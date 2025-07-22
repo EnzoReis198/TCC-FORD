@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ShellComponent } from './shell/shell';
+import { AuthGuard } from './guards/aut.guard';
 
 export const routes: Routes = [
   {
@@ -16,11 +17,13 @@ export const routes: Routes = [
       },
       {
         path: 'dashboard',
-        loadComponent: () => import('./dashboard/dashboard').then(m => m.DashboardComponent)
+        loadComponent: () => import('./dashboard/dashboard').then(m => m.DashboardComponent),
+        canActivate: [AuthGuard] // 🔒 Protege a rota - só acessa logado
       },
-            {
+      {
         path: 'mustang',
-        loadComponent: () => import('./mustang/mustang').then(m => m.MustangComponent)
+        loadComponent: () => import('./mustang/mustang').then(m => m.MustangComponent),
+        canActivate: [AuthGuard] // 🔒 Protege também se quiser
       }
     ]
   }
