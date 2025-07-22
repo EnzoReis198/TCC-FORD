@@ -1,15 +1,8 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "dist/proj-ford/**/*",
+      "src": "dist/proj-ford/**",
       "use": "@vercel/static"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }
