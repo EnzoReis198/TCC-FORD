@@ -24,7 +24,12 @@ export const routes: Routes = [
         path: 'mustang',
         loadComponent: () => import('./mustang/mustang').then(m => m.MustangComponent),
         canActivate: [AuthGuard] // 🔒 Protege também se quiser
+      },
+      {
+      path: '**',
+      loadComponent: () => import('./not-found/not-found').then(m => m.NotFoundComponent)
       }
+
     ]
   }
 ];
