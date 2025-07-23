@@ -189,6 +189,22 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     });
 
 
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const animatedSections = document.querySelectorAll('.animate-on-scroll');
+  animatedSections.forEach(section => observer.observe(section));
+
+
+  
+
+
     // Espera o Angular renderizar tudo, e clica no primeiro carro do carrossel
 setTimeout(() => {
   const firstCar = this.carouselItems.get(0)?.nativeElement;
@@ -336,6 +352,7 @@ irParaVans () {
 irParaEletric () {
   this.router.navigate(['/eletric']);
 }
+
 
 
 }

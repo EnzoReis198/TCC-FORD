@@ -1046,48 +1046,94 @@ width: 35rem;
   color: #a8ece1; /* amarelo */
 }
 
+
+
+
+/* --- Estrutura base --- */
 .clean-performance {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff;
+  background: #f9f9f9;
   padding: 80px 5%;
   gap: 60px;
   font-family: 'Poppins', sans-serif;
 }
 
+/* --- Texto principal --- */
 .clean-text {
   flex: 1 1 500px;
   max-width: 600px;
 }
 
+/* --- Rótulo "NOVIDADE" --- */
 .label {
   display: inline-block;
-  background: #000;
+  background: #0053ba;
   color: #fff;
   font-size: 12px;
-  padding: 5px 16px;
-  border-radius: 30px;
-  letter-spacing: 1px;
+  padding: 6px 18px;
+  border-radius: 20px;
+  letter-spacing: 1.2px;
   margin-bottom: 20px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
+/* --- Título e subtítulo --- */
 .title {
-  font-size: 36px;
+  font-size: 2.5rem;
   line-height: 1.3;
   margin-bottom: 20px;
   color: #111;
 }
 
 .subtitle {
-  font-size: 16px;
-  color: #555;
+  font-size: 1.1rem;
+  color: #444;
   margin-bottom: 40px;
 }
 
+/* --- Mini carrossel --- */
+.mini-carousel .carousel-track {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.carousel-slide h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.carousel-slide p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.carousel-dots {
+  margin-top: 15px;
+}
+
+.dash {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #aaa;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dash.active {
+  background: #0053ba;
+}
+
+/* --- Features adicionais --- */
 .features-row {
   display: flex;
   gap: 40px;
@@ -1098,25 +1144,30 @@ width: 35rem;
 .feature-item {
   flex: 1;
   min-width: 220px;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(11, 13, 146, 0.418);
+  transition: transform 0.3s ease;
 }
 
-.feature-item img {
-  width: 36px;
-  height: auto;
-  margin-bottom: 10px;
+.feature-item:hover {
+  transform: translateY(-6px);
 }
 
 .feature-item h3 {
   font-size: 18px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   color: #222;
 }
 
 .feature-item p {
   font-size: 14px;
-  color: #666;
+  color: #555;
+  line-height: 1.5;
 }
 
+/* --- Imagem à direita --- */
 .clean-image-wrapper {
   position: relative;
   flex: 1 1 400px;
@@ -1124,38 +1175,70 @@ width: 35rem;
 }
 
 .highlight-img {
-  width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease;
+position: relative;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 50px 18px rgb(0 0 0 / 12%);
+    transition: transform 0.4s ease;
+    width: 107%;
 }
 
 .highlight-img:hover {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
-.quote-glass {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
-  padding: 16px 24px;
-  border-radius: 16px;
-  max-width: 80%;
-  color: #111;
-  font-size: 14px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+/* --- Animações ao rolar --- */
+.animate-on-scroll {
   opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
-.quote-glass p {
-  margin: 0 0 6px;
-  font-style: italic;
+
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
 }
-.quote-glass span {
-  color: #e63946;
-  font-weight: 600;
+
+/* --- Responsividade --- */
+@media (max-width: 960px) {
+  .clean-performance {
+    flex-direction: column;
+    padding: 60px 4%;
+  }
+
+  .clean-text,
+  .clean-image-wrapper {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .features-row {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
 }
+
+
+
+* Animação padrão */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 
@@ -1616,6 +1699,7 @@ width: 35rem;
   .image-section {
     display: none;             /* tira imagem pra liberar espaço */
   }
+
 
   
   .nav-icons {
