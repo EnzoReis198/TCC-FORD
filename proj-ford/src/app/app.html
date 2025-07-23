@@ -33,11 +33,12 @@
 
   
      <!-- ÍCONE DE USUÁRIO -->
-<svg tabindex="0" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+<div caixa-user><svg tabindex="0" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
      (click)="toggleUserMenu()" class="user-icon">
   <circle cx="12" cy="7" r="4" />
   <path d="M5.5 21a6.5 6.5 0 0 1 13 0" />
 </svg>
+</div>
 
     </div>
   </div>
@@ -71,7 +72,7 @@
 
   <!-- Vídeo principal -->
   <div class="video-container" #videoContainer>
-<video id="background-video" autoplay loop playsinline #videoBg>
+<video id="background-video" autoplay muted loop playsinline #videoBg preload="auto">
   <source src="assets/videos/mustang.mp4" type="video/mp4" #videoSource />
   Seu navegador não suporta vídeo.
 </video>
@@ -99,7 +100,7 @@
   </div>
 
 <div class="car-description" data-index="2" #carDescription>
-    <h2 class="car-title dynamic-color">Modelo</h2>
+    <h2 class="car-title dynamic-color">Territory</h2>
     <p class="car-tagline">Sua vida em um suspiro de emoção controlada</p>
    <a (click)="irParaMustang()" class="car-link dynamic-color" id="link">AVENTURE-SE
     <span class="underline"></span>
@@ -115,8 +116,8 @@
       <div class="carousel-item" #carouselItem data-video="videos/raptor.mp4">
         <img src="assets/img/carro1.png" alt="Raptor" class="carousel-img2" />
       </div>
-      <div class="carousel-item" #carouselItem data-video="videos/sla.mp4">
-        <img src="assets/img/carro3.png" alt="F150" class="carousel-img3" />
+      <div class="carousel-item" #carouselItem data-video="videos/territory.mp4">
+        <img src="assets/img/territory.png" alt="F150" class="carousel-img3" />
       </div>
     </div>
   </div>
@@ -135,9 +136,9 @@
     <div class="menu-columns">
       <div class="menu-column">
         <h3>Performance</h3>
-        <a href="#">Mustang</a>
-        <a href="#">Raptor</a>
-        <a href="#">Novo Modelo</a>
+        <a (click)="irParaMustang()">Mustang</a>
+        <a (click)="irParaMustang()">Raptor</a>
+        <a (click)="irParaMustang()">Territory</a>
       </div>
       <div class="menu-column">
         <h3>Veiculos</h3>
@@ -173,8 +174,8 @@
       </div>
 
     </div>
-    <div class="menu-images">
-      <img src="assets/img/carro1.png" alt="Mustang">
+    <div class="menu-images-futuro">
+      <img src="#" alt="">
     </div>
   </div>
 </div>
@@ -187,9 +188,6 @@
 
 
   <!-- Conteúdo extra abaixo do vídeo -->
-
-
-
 <section class="clean-performance">
   <div class="clean-text">
     <span class="label">NOVIDADE</span>
@@ -368,11 +366,11 @@
       <div class="social-media">
         <h3>Siga-nos</h3>
         <div class="social-icons">
-          <a href="#" aria-label="Facebook" target="_blank" rel="noopener"><img src="img/social/facebook.svg" alt="Facebook" /></a>
-          <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><img src="img/social/instagram.svg" alt="Instagram" /></a>
-          <a href="#" aria-label="Twitter" target="_blank" rel="noopener"><img src="img/social/twitter.svg" alt="Twitter" /></a>
-          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="img/social/linkedin.svg" alt="LinkedIn" /></a>
-          <a href="#" aria-label="YouTube" target="_blank" rel="noopener"><img src="img/social/youtube.svg" alt="YouTube" /></a>
+          <a href="#" aria-label="Facebook" target="_blank" rel="noopener"><img src="assets/img/facebook.png" alt="Facebook" class="social-img" /></a>
+          <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><img src="assets/img/instagram.png" alt="Instagram" class="social-img" /></a>
+          <a href="#" aria-label="Twitter" target="_blank" rel="noopener"><img src="assets/img/twitter.png" alt="Twitter" class="social-img" /></a>
+          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="assets/img/linkedin.png" alt="LinkedIn" class="social-img" /></a>
+          <a href="#" aria-label="YouTube" target="_blank" rel="noopener"><img src="assets/img/youtube.png" alt="YouTube" class="social-img" /></a>
         </div>
       </div>
     </div>

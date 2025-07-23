@@ -382,3 +382,74 @@
   }
 }
 
+@media (max-width: 546px) {
+  .grid {
+    grid-template-areas:
+      "center"
+      "left"
+      "right"
+      "bottom";
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    padding: 8px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .car-animation-container {
+    height: 200px;
+  }
+
+  .car-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  #modelo-nome {
+    font-size: 1rem;
+  }
+
+  .speed-box {
+    font-size: 1.2rem;
+  }
+
+  .car-image img {
+    max-height: 150px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .card {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .value {
+    font-size: 1rem;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+}

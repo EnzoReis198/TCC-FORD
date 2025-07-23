@@ -149,3 +149,45 @@
     width: 90px;
   }
 }
+
+
+
+
+
+
+
+.btn-login[disabled] {
+  background-color: #ccc;  /* Cinza quando desabilitado */
+  cursor: not-allowed;
+}
+
+.btn-login:not([disabled]):hover {
+  background-color: #0056b3; /* Cor do botão quando ativado */
+}
+
+/* Estilo para a caixa de seleção (checkbox) */
+.lgpd-consent {
+      display: flex;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 7px;
+}
+
+.lgpd-consent input {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff; /* Cor do checkbox */
+}
+
+.lgpd-consent label {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Estilo adicional para o texto de ajuda */
+.help-text {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}

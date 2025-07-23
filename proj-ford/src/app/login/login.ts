@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthService, UserProfile } from '../../services/auth-service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,15 @@ import { AuthService, UserProfile } from '../../services/auth-service';
   styleUrls: ['./login.css'],
   standalone: true,
   imports: [
-HttpClientModule
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class LoginComponent implements OnInit {
   username = '';
   password = '';
   showLoginBox = false;
+  isLgpdAccepted: boolean = false; // Variável para controle do LGPD
 
   constructor(
     private router: Router,
@@ -29,38 +32,44 @@ export class LoginComponent implements OnInit {
     }, 50);
   }
 
+  get isButtonDisabled(): boolean {
+    return !this.isLgpdAccepted;
+  }
+
   onSubmit() {
-    if (!this.username || !this.password) {
+    const email = this.username.trim().toLowerCase();
+    const senha = this.password.trim();
+
+    if (!email || !senha) {
       alert('Preencha usuário e senha.');
       return;
     }
 
-    const body = {
-      email: this.username,
-      senha: this.password
-    };
+    if (!this.isLgpdAccepted) {
+      alert('Você precisa aceitar a política de privacidade e LGPD para continuar.');
+      return;
+    }
+
+    const body = { email, senha };
+
+    console.log('Enviando para API:', body); // Pode remover depois
 
     this.http.post<any>('https://apienzo-production.up.railway.app/login', body).subscribe({
       next: (res) => {
         console.log('Login realizado:', res);
 
-        // Cria o perfil do usuário com os dados da API
         const profile: UserProfile = {
           id: res.usuario.id,
           name: res.usuario.nome,
-          email: res.usuario.email,
-          // photoUrl se tiver, pode adicionar aqui
+          email: res.usuario.email
         };
 
-        // Usa o AuthService para salvar token e perfil (atualiza estado global)
         this.authService.login(res.token, profile);
-
-        // Redireciona para home
         this.router.navigate(['']);
       },
       error: (err) => {
         console.error('Erro no login:', err);
-        alert('Usuário ou senha inválidos.');
+        alert('Erro: ' + (err.error?.mensagem || 'Usuário ou senha inválidos.'));
       }
     });
   }

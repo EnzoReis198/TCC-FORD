@@ -54,10 +54,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
   ) {}
 
   ngOnInit() {
-    // Loader fake 3s
-    setTimeout(() => {
-      this.showLoader = false;
-    }, 3000);
+
 
     // Checa se já está logado ao abrir app
     this.authService.checkInitialLogin();
@@ -85,6 +82,47 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     const cursorTrail = this.cursorTrailRef?.nativeElement;
     const videoContainer = this.videoContainerRef?.nativeElement;
 
+  const videoFiles = [
+    'assets/videos/mustang.mp4',
+    'assets/videos/raptor.mp4',
+    'assets/videos/sla.mp4'
+  ];
+
+  let loadedCount = 0;
+
+  const onAllVideosLoaded = () => {
+    this.showLoader = false;
+    console.log('Todos os vídeos do carrossel foram carregados!');
+    // Agora você pode dar play no vídeo visível normalmente
+    const videoBg = this.videoBgRef?.nativeElement;
+    if (videoBg) {
+      videoBg.muted = true;
+      videoBg.play().catch(err => {
+        console.warn('Erro ao iniciar vídeo:', err);
+      });
+    }
+  };
+
+  // Pré-carrega vídeos em memória invisível
+  videoFiles.forEach(src => {
+    const tempVideo = document.createElement('video');
+    tempVideo.src = src;
+    tempVideo.preload = 'auto';
+    tempVideo.muted = true;
+    tempVideo.playsInline = true;
+    tempVideo.addEventListener('canplaythrough', () => {
+      loadedCount++;
+      if (loadedCount === videoFiles.length) {
+        onAllVideosLoaded();
+      }
+    }, { once: true });
+
+    // Força o carregamento
+    tempVideo.load();
+  });
+
+
+
     if (
       !videoBg ||
       !videoSource ||
@@ -109,6 +147,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
       this.carDescriptions.first?.nativeElement.classList.add('active');
       videoBg.oncanplay = null;
     };
+
 
     // Carrossel principal
     this.carouselItems.forEach((itemRef, index) => {
@@ -148,6 +187,18 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
       });
       this.listeners.push(listener);
     });
+
+
+    // Espera o Angular renderizar tudo, e clica no primeiro carro do carrossel
+setTimeout(() => {
+  const firstCar = this.carouselItems.get(0)?.nativeElement;
+  if (firstCar) {
+    firstCar.click(); // Clique real no primeiro item do carrossel
+    console.log('Clique automático no primeiro carro disparado.');
+  } else {
+    console.warn('Nenhum carro encontrado para clicar automaticamente.');
+  }
+}, 200); // pequeno delay para garantir que DOM está pronto
 
     // Menu hambúrguer
     const openMenu = () => {
@@ -285,6 +336,7 @@ irParaVans () {
 irParaEletric () {
   this.router.navigate(['/eletric']);
 }
+
 
 }
 

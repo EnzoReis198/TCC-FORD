@@ -1,20 +1,20 @@
 <div class="login-wrapper">
   <div class="login-box" [class.show]="showLoginBox">
-<button class="btn-back" (click)="goBack()" aria-label="Voltar">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="35"
-    height="45"
-    fill="none"
-    stroke="white"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    viewBox="0 0 24 24"
-  >
-    <polyline points="15 18 9 12 15 6" />
-  </svg>
-</button>
+    <button class="btn-back" (click)="goBack()" aria-label="Voltar">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="35"
+        height="45"
+        fill="none"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        viewBox="0 0 24 24"
+      >
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </button>
 
     <img src="assets/img/logo-ford.png" alt="Ford Logo" class="logo" />
 
@@ -36,7 +36,23 @@
       class="input-field"
     />
 
-    <button (click)="onSubmit()" class="btn-login">Login</button>
+    <!-- Caixa de seleção LGPD com estilo -->
+    <div class="lgpd-consent">
+      <input
+        type="checkbox"
+        id="lgpdCheckbox"
+        [(ngModel)]="isLgpdAccepted"
+      />
+      <label for="lgpdCheckbox">Eu aceito <a href="">Termos</a> de política privacidade.</label>
+    </div>
+
+    <!-- Botão de Login estilizado -->
+    <button 
+      (click)="onSubmit()" 
+      class="btn-login" 
+      [disabled]="isButtonDisabled">
+      Login
+    </button>
 
     <small class="help-text">Digite seu usuário e senha para continuar</small>
   </div>
